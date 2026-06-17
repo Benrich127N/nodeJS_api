@@ -1,14 +1,24 @@
-const express = require("express");
+import express from "express";
+
+import movieRoutes from "./routes/movieRoutes.js";
+
 
 const app = express();
 
-app.get("/hello", (req, res) => {
-  res.json({message: "hello world"});
-});
+
+
+
+// api routes
+
+
+app.use("/movies", movieRoutes
+  
+);
 
  
 const PORT = 5001;
-const server = app.listen(PORT, () => {console.log(`Server running on PORT ${PORT}`);});
+app.listen(PORT, () => {console.log(`Server running on PORT ${PORT}`);});
 
 
 // GET POST
+// http://localhost:5001/hello
